@@ -42,7 +42,7 @@
 </nav>
 <br>
  <!-- table with all the attributes -->
-<table class="table">
+<table id="table-id" class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -165,4 +165,14 @@
 </div>
       
   </body>
+
+  <script src='javascript/tablesort.js'></script>
+
+  <!-- Include sort types you need -->
+  <script src='tablesort.number.js'></script>
+  <script src='tablesort.date.js'></script>
+
+  <script>
+    new Tablesort(document.getElementById('table-id'));
+  </script>
 </html>
