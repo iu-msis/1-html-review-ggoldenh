@@ -20,8 +20,9 @@ img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 </style>
+<script src="https://unpkg.com/vue@next"></script>
+
   </head>
-  <body>
 
   <div class="container">
 
@@ -56,36 +57,29 @@ img:hover {
 <! --- This code was in reference to codepen.io and their random user generator application --->
 <br>
 
-</head>
-<body>
-
-
-
-
-
   <br>
   <br>
   
    <!-- false information-->
   </div>
-  <div id="fullname">Full Name: Andrea Sorensen</div>
-    <div class="description">
-      <br>
-      <div>Email: <span id="email">andrea.sorensen@example.com</span></div>
-      <br>
-      <div>Country: <span id="Country">United States</span></div>
-      <br>
-      <div>Birth Date: <span id="Country">1/1/1969</span></div>
-      <br>
-      <div>Age: <span id="Country">52</span></div>
-      <br>
-      <div>Country: <span id="Country">United States</span></div>
-      <br>
-      <a href="mailto:andrea.sorensen@example.com">Email Us</a>  
-      <br>
+
+  <div id="someApp">
+  <p>{{result.name}}</p>
   </div>
- 
-</div>
+  <!--<div id="offerApp">
+    <p>{{result.name}}</p>
+    <p>Full Name: {{result.name.first}} {{result.name.last}}</p>
+      <br>
+      <p>Email: <a v-bind:href="'mailto:'+ result.email">{{result.email}}</a></p>
+      <br>
+      <p>Country: <span id="Country">{{result.location.country}}</span></p>
+      <br>
+      <p>Birth Date: <span id="Country">{{prettyBirthday}}</span></p>
+      <br>
+      <p>Age: <span id="Country">{{result.dob.age}}</span></p>
+      <br>
+      
+  </div>> -->
 
 <a target="_blank" href="https://i.guim.co.uk/img/media/ac3a7be3d4cdc0b7ed07b2eeb41c03df9e1887c6/0_1952_5333_3200/master/5333.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=9de08bc0395beb538802846143f78a58">
   <img src="https://i.guim.co.uk/img/media/ac3a7be3d4cdc0b7ed07b2eeb41c03df9e1887c6/0_1952_5333_3200/master/5333.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=9de08bc0395beb538802846143f78a58" alt="Andrea Sorensen" style="width:150px">
@@ -93,6 +87,7 @@ img:hover {
  <!--Cite:https://www.amazon.com/Hunger-Games-Book/dp/0439023483-->
 </a>
 
-      
+<script src="javascript/script.js"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   </body>
 </html>
