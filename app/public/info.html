@@ -54,7 +54,7 @@ img:hover {
     
   </div>
 </nav>
-<! --- This code was in reference to codepen.io and their random user generator application --->
+
 <br>
 
   <br>
@@ -63,31 +63,29 @@ img:hover {
    <!-- false information-->
   </div>
 
-  <div id="someApp">
-  <p>{{result.name}}</p>
-  </div>
-  <!--<div id="offerApp">
-    <p>{{result.name}}</p>
-    <p>Full Name: {{result.name.first}} {{result.name.last}}</p>
-      <br>
-      <p>Email: <a v-bind:href="'mailto:'+ result.email">{{result.email}}</a></p>
-      <br>
-      <p>Country: <span id="Country">{{result.location.country}}</span></p>
-      <br>
-      <p>Birth Date: <span id="Country">{{prettyBirthday}}</span></p>
-      <br>
-      <p>Age: <span id="Country">{{result.dob.age}}</span></p>
-      <br>
-      
-  </div>> -->
 
-<a target="_blank" href="https://i.guim.co.uk/img/media/ac3a7be3d4cdc0b7ed07b2eeb41c03df9e1887c6/0_1952_5333_3200/master/5333.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=9de08bc0395beb538802846143f78a58">
-  <img src="https://i.guim.co.uk/img/media/ac3a7be3d4cdc0b7ed07b2eeb41c03df9e1887c6/0_1952_5333_3200/master/5333.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=9de08bc0395beb538802846143f78a58" alt="Andrea Sorensen" style="width:150px">
+  <div id="someApp">
+    <p>First: {{result.name.first}}</p>
+ 
+    <p>Last: {{result.name.last}}</p>
+
+    <p>Country: {{result.location.country}}</p>
+
+    <!-- <p>{{ result.dob.date }}</p> -->
+    <p>Birthday: {{prettyBirthday}}</p>
+
+    <p>Age: {{result.dob.age}}</p>
+    <p>Email: <a v-bind:href="'mailto:' + result.email">{{ result.email }}</a> </p>
+  
+  <a v-bind:href='result.picture.large'> <img v-bind:src='result.picture.large'></a>
+</div>
   <br>
  <!--Cite:https://www.amazon.com/Hunger-Games-Book/dp/0439023483-->
-</a>
 
-<script src="javascript/script.js"></script>
-  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+ <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+
+ <script src="javascript/script.js"></script>
   </body>
 </html>
