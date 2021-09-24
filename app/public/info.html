@@ -65,6 +65,9 @@ img:hover {
 
 
   <div id="someApp">
+    <form v-on:submit.prevent="fetchUserData">
+      <button type="submit">Refresh</button>
+    </form>
     <p>First: {{result.name.first}}</p>
  
     <p>Last: {{result.name.last}}</p>
