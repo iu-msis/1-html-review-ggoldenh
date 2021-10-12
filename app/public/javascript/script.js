@@ -1,36 +1,36 @@
 const SomeApp = {
-  data() {
-    return {
-      result: {},
-    }
-  },
-  computed: {
-      prettyBirthday() {
-          return dayjs(this.result.dob.date)
-          .format('D MMM YYYY');
+    data() {
+      return {
+        book: [],
       }
-  },
-  methods: {
-    fetchUserData() {
-        fetch('https://randomuser.me/api/')
-        .then(response => response.json())
-        .then((json) => {
-            console.log("Got json back:", json);
-            this.result = json.results[0];
-            console.log("C");
-        })
-        .catch( (error) => {
-            console.error(error);
-        });
+    },
+    computed: {},
+    methods: {
+        prettyData(d) {
+            return dayjs(d)
+            .format('D MMM YYYY')
+        },
+        prettyDollar(n) {
+            const d = new Intl.NumberFormat("en-US").format(n);
+            return "$ " + d;
+        },
+        
+        fetchbookData() {
+            fetch('/api/books/')
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.book = responseJson;
+            })
+            .catch( (err) => {
+                console.error(err);
+            })
+        },
+    },
+    created() {
+        this.fetchbookData();
     }
-},
-created() {
-    this.fetchUserData();
-}
-
-}
-
-Vue.createApp(SomeApp).mount('#someApp');
-
-
-
+  
+  }
+  
+  Vue.createApp(SomeApp).mount('#bookApp');
