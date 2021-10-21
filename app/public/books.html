@@ -72,69 +72,95 @@
 </tbody>
 </table>
 </div>
+<form v-on:submit.prevent="postNewOffer">
+  <div class="mb-3">
+    <label for="bookNumber" class="form-label">Company Name</label>
+    <input type="text" v-model="offerForm.bookNumber"
+     class="form-control" id="bookNumber">
+  </div>
+  <div class="mb-3">
+    <label for="bookTitle" class="form-label">Title</label>
+    <input type="text" v-model="offerForm.bookTitle" class="form-control" id="bookTitle">
+  </div>
+  <div class="mb-3">
+    <label for="bookAuthor" class="form-label">Author</label>
+    <input type="text" v-model="offerForm.bookAuthor" class="form-control" id="bookAuthor">
+  </div>
+  <div class="mb-3">
+    <label for="bookPublished" class="form-label">Published</label>
+    <input type="text" v-model="offerForm.bookPublished" class="form-control" id="bookPublished">
+  </div>
+  <div class="mb-3">
+    <label for="bookPublisher" class="form-label">Publisher</label>
+    <input type="text" v-model="offerForm.bookPublisher" class="form-control" id="bookPublisher">
+  </div>
+  <div class="mb-3">
+    <label for="bookPagecount" class="form-label">Page Count</label>
+    <input type="text" v-model="offerForm.bookPagecount" class="form-control" id="bookPagecount">
+  </div>
+  <div class="mb-3">
+    <label for="bookMSRP" class="form-label">msrp</label>
+    <input type="text" v-model="offerForm.bookMSRP" class="form-control" id="bookMSRP">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 </div>
-<form>
+<!-- <form> -->
    <!-- forms -->
-  <div class="form-group">
+ <!-- <div class="form-group">
     <label for="exampleInputEmail1">Add Title</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Title Here">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Title Here">
    
   </div>
    <div class="form-group">
     <label for="exampleInputEmail1">Add Author</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Author Here">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Author Here">
    
   </div>
    <div class="form-group">
     <label for="exampleInputEmail1">Add Year Published</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Year Published Here">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Year Published Here">
    
   </div>
    <div class="form-group">
     <label for="exampleInputEmail1">Add Publisher</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Publisher Here">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Publisher Here">
    
   </div>
    <div class="form-group">
     <label for="exampleInputEmail1">Add Page Count</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Page Count Here">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Page Count Here">
    
   </div>
    <div class="form-group">
     <label for="exampleInputEmail1">Add MSRP</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add MSRP Here">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add MSRP Here">
    
   </div>
+-->
+
+</div>
   
    <!-- thumbnail images with -->
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <!--<button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
 <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
-  <a target="_blank" href="https://media.kohlsimg.com/is/image/kohls/4671437?wid=600&hei=600&op_sharpen=1">
-  <img src="https://media.kohlsimg.com/is/image/kohls/4671437?wid=600&hei=600&op_sharpen=1" alt="Harry Potter" style="width:150px">
-  <br>
-  <!--Cite:https://www.amazon.com/Harry-Potter-Sorcerers-Stone-Large/dp/0786222727-->
-  <br>
-</a>
-<a target="_blank" href="https://upload.wikimedia.org/wikipedia/en/3/39/The_Hunger_Games_cover.jpg">
-  <img src="https://upload.wikimedia.org/wikipedia/en/3/39/The_Hunger_Games_cover.jpg" alt="Hunger Games" style="width:150px">
-  <br>
- <!--Cite:https://www.amazon.com/Hunger-Games-Book/dp/0439023483-->
-</a>
+    <a target="_blank" href="https://media.kohlsimg.com/is/image/kohls/4671437?wid=600&hei=600&op_sharpen=1">
+    <img src="https://media.kohlsimg.com/is/image/kohls/4671437?wid=600&hei=600&op_sharpen=1" alt="Harry Potter" style="width:150px">
+    <br>
+    <!--Cite:https://www.amazon.com/Harry-Potter-Sorcerers-Stone-Large/dp/0786222727-->
+    <br>
+    </a>
+   <a target="_blank" href="https://upload.wikimedia.org/wikipedia/en/3/39/The_Hunger_Games_cover.jpg">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/39/The_Hunger_Games_cover.jpg" alt="Hunger Games" style="width:150px">
+      <br>
+    <!--Cite:https://www.amazon.com/Hunger-Games-Book/dp/0439023483-->
+  </a>
       
-      </div>
+</div>
 <script src="javascript/script.js"></script>
 
-      
-
-  <script src='javascript/tablesort.js'></script>
 
   <!-- Include sort types you need -->
-  <script src='tablesort.number.js'></script>
-  <script src='tablesort.date.js'></script>
-
-  <script>
-    new Tablesort(document.getElementById('table-id'));
-  </script>
   </body>
 </html>

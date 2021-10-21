@@ -2,6 +2,7 @@ const SomeApp = {
     data() {
       return {
         book: [],
+        bookForm: {}
       }
     },
     computed: {},
@@ -26,11 +27,32 @@ const SomeApp = {
                 console.error(err);
             })
         },
+        fetchBookData(s) {
+
+
+            this.bookForm.studentId = this.book.id;
+
+            console.log("Fetching book data for ", s);
+            fetch('/api/books.php' + s.id)
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.book = responseJson;
+            })
+            .catch( (err) => {
+                console.error(err);
+            })
+            .catch( (error) => {
+                console.error(error);
+            });
+        },
     },
     created() {
         this.fetchbookData();
     }
   
   }
+
+  
   
   Vue.createApp(SomeApp).mount('#bookApp');
