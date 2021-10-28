@@ -26,8 +26,8 @@ const SomeApp = {
             .catch( (err) => {
                 console.error(err);
             })
-        },
-        fetchBookData(s) {
+        }
+   /*     fetchBookData(s) {
 
 
             this.bookForm.studentId = this.book.id;
@@ -46,8 +46,8 @@ const SomeApp = {
                 console.error(error);
             });
         },
-    },
-    created() {
+    },*/ },
+        created() {
         this.fetchbookData();
     }
   
