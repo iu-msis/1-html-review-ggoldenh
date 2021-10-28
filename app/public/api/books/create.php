@@ -31,18 +31,17 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO book (bookNumber, bookTitle, bookAuthor, bookPublished, bookPublisher, bookPagecount, bookMSRP),
-  VALUES (?, ?, ?, ?, ?, ?, ?)'
+    'INSERT INTO book (bookTitle, bookAuthor, bookPublished, bookPublisher, bookPagecount, bookMSRP) 
+  VALUES (?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
-  $_POST['bookNumber'],
-  $_POST['bookTitle'],
-  $_POST['bookAuthor'],
-  $_POST['bookPublished'],
-  $_POST['bookPublisher'],
-  $_POST['bookPagecount'],
-  $_POST['bookMSRP']
+  $_POST['Title'],
+  $_POST['Author'],
+  $_POST['Year'],
+  $_POST['Publisher'],
+  $_POST['Pagecount'],
+  $_POST['MSRP']
 ]);
 
 // Get auto-generated PK from DB
@@ -53,4 +52,4 @@ $stmt->execute([
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-header('Location: ../book/?');
+header('Location: ../books');

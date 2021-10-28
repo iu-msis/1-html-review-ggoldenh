@@ -26,33 +26,34 @@ const SomeApp = {
             .catch( (err) => {
                 console.error(err);
             })
-        }
-   /*     fetchBookData(s) {
-
-
-            this.bookForm.studentId = this.book.id;
-
-            console.log("Fetching book data for ", s);
-            fetch('/api/books.php' + s.id)
-            .then( response => response.json() )
-            .then( (responseJson) => {
-                console.log(responseJson);
-                this.book = responseJson;
-            })
-            .catch( (err) => {
-                console.error(err);
-            })
-            .catch( (error) => {
-                console.error(error);
-            });
         },
-    },*/ },
-        created() {
+        postNewBook(evt) {
+           
+            
+            console.log("Posting!", this.bookForm);
+    
+            fetch('api/books/create.php', {
+                method:'POST',
+                body: JSON.stringify(this.bookForm),
+                headers: {
+                  "Content-Type": "application/json; charset=utf-8"
+                }
+              })
+              .then( response => response.json() )
+              .then( json => {
+                console.log("Returned from post:", json);
+                // TODO: test a result was returned!
+                this.book = json;
+                
+                // reset the form
+                this.bookForm = {};
+              });
+          }
+    },
+    created() {
         this.fetchbookData();
     }
   
   }
-
-  
   
   Vue.createApp(SomeApp).mount('#bookApp');
