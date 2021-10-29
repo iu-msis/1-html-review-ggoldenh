@@ -60,7 +60,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="bk in book">
+    <tr v-for="bk in book" v-on:click="selectBook(bk)"
+      :class="['book', {selected: selectedbook && bk.bookNumber == selectedbook.bookNumber}]"> 
         <td>{{ bk.bookNumber }}</td>
         <td>{{ bk.bookTitle }}</td>
         <td>{{ bk.bookAuthor }}</td>
@@ -68,10 +69,16 @@
         <td>{{ bk.bookPublisher }}</td>
         <td>{{ bk.bookPagecount }}</td>
         <td>{{ bk.bookMSRP }}</td>
+        <td>
+          <button type="button" class="btn btn-outline-secondary btn-sm"
+            v-on:click="selectBook(bk)">Edit</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm"
+            v-on:click="postDeleteBook(bk)">Delete</button>
+        </td>
     </tr>
 </tbody>
 </table>
-<form v-on:submit.prevent="postNewBook">
+<form v-on:submit.prevent="postBook">
    <!-- forms -->
   <div class="form-group">
     <label for="exampleInputEmail1">Add Title</label>
